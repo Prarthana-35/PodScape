@@ -20,9 +20,10 @@ function App() {
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id: "619625737993-s2jn448qt4108k9dbau48j24qru314eq.apps.googleusercontent.com",
+      client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
       callback: handleCallBack,
     });
+    
     google.accounts.id.renderButton(signInButton.current, {
       theme: "outline",
       size: "large",
